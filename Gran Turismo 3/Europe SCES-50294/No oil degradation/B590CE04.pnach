@@ -1,0 +1,7 @@
+gametitle=Gran Turismo 3 - Europe (SCES-50294)
+comment=No oil degradation
+author=Silentwarior112
+
+// No oil degradation
+patch=1,EE,201E0004,extended,00000000
+patch=1,EE,201EB970,extended,00000000
