@@ -1,0 +1,7 @@
+gametitle=Gran Turismo 4 - Europe (SCES-51719)
+comment=10 Billion Credits
+author=Silentwarior112
+
+// 10 Billion Credits
+patch=1,EE,20A31928,extended,5EB66738
+patch=1,EE,20A3192C,extended,726F727A

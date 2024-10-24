@@ -1,0 +1,7 @@
+gametitle=Gran Turismo 4 - Asia (SCAJ-30007)
+comment=10 Billion Credits
+author=Silentwarior112
+
+// 10 Billion Credits
+patch=1,EE,20A8BB98,extended,5EB66738
+patch=1,EE,20A8BB9C,extended,726F727A
