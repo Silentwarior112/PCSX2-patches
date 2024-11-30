@@ -54,3 +54,11 @@ patch=1,EE,20C59A70,extended,6C6C6174 // tall
 patch=1,EE,20C59A74,extended,00006369 // ic  
 patch=1,EE,40C59A78,extended,000B0001 // Blanking unused bytes
 patch=1,EE,00000000,extended,00000000
+
+// SpecDB String fix: Mine's Skyline Car name, this version is missing the dot symbol this car's name uses, so this switches it to use dashes.
+patch=1,EE,20C50317,extended,4E202D20 // " - N"
+patch=1,EE,20C5031B,extended,2D562031 // "1 V-"
+patch=1,EE,20C5031F,extended,63657053 // "Spec"
+patch=1,EE,20C50323,extended,33522820 // " (R3"
+patch=1,EE,20C50327,extended,60202934 // "4) `"
+patch=1,EE,20C5032B,extended,20203030 // "00  "
