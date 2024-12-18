@@ -1,0 +1,21 @@
+gametitle=Gran Turismo 4 - China (SCCS-60002)
+comment=Trigger Sensitivity
+author=Silentwarior112, ported from Silent's codes for other regions
+
+// Silent's codes were set with 90% travel (0000005A), here I have them set to 99% (00000063)
+
+//Throttle
+patch=1,EE,2043B470,extended,00000000
+patch=1,EE,1043B47C,extended,00000063
+
+//Brake
+patch=1,EE,2043B4D0,extended,00000000
+patch=1,EE,1043B4DC,extended,00000063
+
+//E-Brake
+patch=1,EE,2043B530,extended,00000000
+patch=1,EE,1043B53C,extended,00000063
+
+//Reverse
+patch=1,EE,2043B590,extended,00000000
+patch=1,EE,1043B59C,extended,00000063
