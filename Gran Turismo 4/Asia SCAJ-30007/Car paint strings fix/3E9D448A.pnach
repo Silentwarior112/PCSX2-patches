@@ -1,5 +1,8 @@
 gametitle=Gran Turismo 4 - Asia (SCAJ-30007)
-comment=Fixes some strings that have unicode errors where they use full width unicodes instead of standard western unicode which causes some ugly or outright invisible text glyphs. 
+comment=Car paint and name strings fix
+
+[Various string fixes]
+description=Fixes strings that have full width unicode when should be standard, and/or outright invisible text glyphs
 author=Silentwarior112
 
 // Additional note: GT Mode icon strings with missing 1st letter
