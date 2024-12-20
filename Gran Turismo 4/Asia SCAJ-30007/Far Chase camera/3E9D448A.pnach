@@ -1,0 +1,17 @@
+gametitle=Gran Turismo 4 - Asia (SCAJ-30007)
+comment=Far Chase cam
+description=Adds GT4 First Preview camera mode
+author=Silentwarior112, ported from Silent's codes from other regions
+
+// Far Chase cam (GT4FP stiff cam)
+patch=1,EE,2037500C,extended,84E30000
+patch=1,EE,10375010,extended,0002
+patch=1,EE,10375020,extended,0004
+patch=1,EE,20375030,extended,84E30000
+
+patch=1,EE,10375040,extended,0004
+patch=1,EE,00375058,extended,40
+patch=1,EE,1037506A,extended,8442
+
+patch=1,EE,206186C8,extended,00010000
+patch=1,EE,206186CC,extended,00060014
