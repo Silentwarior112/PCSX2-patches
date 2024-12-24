@@ -1,0 +1,6 @@
+gametitle=Gran Turismo 4 - Asia (SCAJ-30007)
+comment=Deinterlace menus (Set PCSX2 Deinterlacing to "No Deinterlacing")
+author=Silentwarior112, ported from UnixRoot's code from PAL region
+
+// Deinterlace menus: Asia and Japan ver.
+patch=1,EE,0049AA2C,word,0000102D // 80A202C0

@@ -1,0 +1,7 @@
+gametitle=Gran Turismo 4 - USA OPB (SCUS-97436)
+comment=Max B-Spec skill
+author=Silentwarior112
+
+// Max B-Spec skill
+patch=1,EE,409BA434,extended,006F0001
+patch=1,EE,FFFFFFFF,extended,00000000
