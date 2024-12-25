@@ -2,5 +2,5 @@ gametitle=Gran Turismo 4 - China (SCCS-60002)
 comment=Deinterlace menus (Set PCSX2 Deinterlacing to "No Deinterlacing")
 author=Silentwarior112, ported from UnixRoot's code from PAL region
 
-// Korea, China review copy, and both US Black label and GH
+// Deinterlace menus: Korea, China review copy, and both US Black label and GH
 patch=1,EE,004A2A2C,word,0000102D // 80A202C0
