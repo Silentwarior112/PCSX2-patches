@@ -1,0 +1,21 @@
+gametitle=Gran Turismo 4 - Japanese Online Test Version (PAPX-90523)
+comment=Trigger Sensitivity
+author=Silentwarior112, ported from Silent's codes from other regions
+
+// Silent's codes were set with 90% travel (0000005A), here I have them set to 99% (00000063)
+
+//Throttle
+patch=1,EE,20318CFC,extended,24110063
+patch=1,EE,20318D7C,extended,00000000
+
+//Brake
+patch=1,EE,20318D00,extended,24100163
+patch=1,EE,20318DD8,extended,00000000
+
+//E-Brake
+patch=1,EE,20318D04,extended,24160063
+patch=1,EE,20318E30,extended,00000000
+
+//Reverse
+patch=1,EE,20318D08,extended,24150063
+patch=1,EE,20318E84,extended,00000000
