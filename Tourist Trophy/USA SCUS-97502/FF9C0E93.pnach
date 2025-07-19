@@ -1,0 +1,6 @@
+gametitle=Tourist Trophy (SCUS-97502)
+comment=Deinterlace menus (Set PCSX2 Deinterlacing to "No Deinterlacing")
+author=Silentwarior112
+
+// Deinterlace menus:
+patch=1,EE,004704FC,word,0000102D // 80A202C0
