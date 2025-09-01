@@ -1,5 +1,5 @@
 gametitle=Gran Turismo 3 [SCPS-15009] (J)
-comment=21:9 Ultrawidescreen in-race
+comment=32:9 Ultrawidescreen in-race
 author=Duxi, further improved by Silentwarior112
 // LOD patch is needed to counteract the side effect of increasing the FOV this much
 patch=1,EE,21BD8A,short,1000
@@ -7,18 +7,18 @@ patch=1,EE,21CA16,short,1000
 patch=1,EE,21F2E2,short,1000
 patch=1,EE,2212A2,short,1000
 
-patch=1,EE,17D908,short,3F0F // Horizontal Field of view
-patch=1,EE,17DA58,short,4366 // Rear view Horizontal Field of view
-patch=1,EE,17DA70,short,4334 // Rear view mirror box horizontal size
-patch=1,EE,349F60,word,3F892329 //  Rear view rendering
+patch=1,EE,17D908,short,3EC0 // Horizontal Field of view
+patch=1,EE,17DA58,short,4381 // Rear view Position
+patch=1,EE,17DA70,short,4300 // Rear view mirror box horizontal size
+patch=1,EE,349F60,word,3F320000 //  Rear view Field of view
 
 // The 1st/2nd/3rd in the corner does not seem to be movable since it's attached to all these other things
-patch=1,EE,1920BC,short,3F08 // 1st/2nd/3rd place etc., odometers, digital speedo, AT/MT, lap counter, etc. horizontal size
+patch=1,EE,1920BC,short,3EC0 // 1st/2nd/3rd place etc., odometers, digital speedo, AT/MT, lap counter, etc. horizontal size
 
 // The way these work is when changing the value, the canvas transforms AND moves too.
 // so you have to balance each side to stay centered
-patch=1,EE,349FD6,word,3EC0 // HUD Canvas resizing (Left)
-patch=1,EE,349FDA,word,3FB0 // HUD Canvas resizing (Right)
+patch=1,EE,349FD6,word,3F60 // HUD Canvas resizing (Left)
+patch=1,EE,349FDA,word,3FF0 // HUD Canvas resizing (Right)
 
 
 
