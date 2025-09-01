@@ -1,0 +1,64 @@
+gametitle=Gran Turismo 3 [SCPS-15009] (J)
+comment=21:9 Ultrawidescreen in-race
+author=Duxi, further improved by Silentwarior112
+// Depending on your preference you may want to apply an FOV patch as well.
+
+patch=1,EE,17D908,short,3F0F // Horizontal Field of view
+patch=1,EE,17DA58,short,4366 // Rear view Horizontal Field of view
+patch=1,EE,17DA70,short,4334 // Rear view mirror box horizontal size
+patch=1,EE,349F60,word,3F892329 //  Rear view rendering
+
+// The 1st/2nd/3rd in the corner does not seem to be movable since it's attached to all these other things
+patch=1,EE,1920BC,short,3F08 // 1st/2nd/3rd place etc., odometers, digital speedo, AT/MT, lap counter, etc. horizontal size
+
+// The way these work is when changing the value, the canvas transforms AND moves too.
+// so you have to balance each side to stay centered
+patch=1,EE,349FD6,word,3EC0 // HUD Canvas resizing (Left)
+patch=1,EE,349FDA,word,3FB0 // HUD Canvas resizing (Right)
+
+
+
+
+// Extra goodies not needed by this method
+// You can mess with these in the PCSX2 debugger
+//patch=1,EE,19669C,word,2403009B // 3, 2, 1, START
+//patch=1,EE,197628,word,2402FEB0 // unknown
+//patch=1,EE,19767C,word,2402FEB0 // unknown
+//patch=1,EE,19CAD4,word,2402FEB0 // track map, unknown what this is doing
+//patch=1,EE,19CC74,word,2405FEB0 // track map blips, unknown what this is doing
+//patch=1,EE,1C9400,short,3F0F // Unknown horizontal size of something??
+
+//patch=1,EE,2B9394,short,??? // Bumper Cam: Tachometer position
+//patch=1,EE,2B93A4,short,??? // Bumper Cam: Speedometer position
+//patch=1,EE,2B93B4,short,??? // Bumper Cam: Digital Speedometer position 
+//patch=1,EE,2B93C4,short,??? // Bumper Cam: Turbo Meter position
+//patch=1,EE,2B93D4,short,??? // Bumper Cam: Gear display
+//patch=1,EE,2B93E4,short,??? // Bumper Cam: Total mileage odometer
+//patch=1,EE,2B93F4,short,??? // Bumper Cam: Trip odometer
+//patch=1,EE,2B9404,short,??? // Bumper Cam: ASM TCS Oil E-brake lights
+//patch=1,EE,2B9414,short,??? // Bumper Cam: Gear display background
+
+// These also have H and V size values next to them, but I don't think we need to use them
+//patch=1,EE,2B9434,short,??? // Chase Cam: Tachometer Horizontal position // 26C
+//patch=1,EE,2B9436,short,??? // Chase Cam: Tachometer Vertical position // 140
+
+//patch=1,EE,2B9444,short,??? // Chase Cam: Digital Speedometer Horizontal position // 244
+//patch=1,EE,2B9446,short,??? // Chase Cam: Digital Speedometer Vertical position // 181
+
+//patch=1,EE,2B9444,short,??? // Chase Cam: Turbo Meter Horizontal position // 1DB
+//patch=1,EE,2B9446,short,??? // Chase Cam: Turbo Meter Vertical position // 1B4
+
+//patch=1,EE,2B9464,short,??? // Chase Cam: Gear display Horizontal position // 26C
+//patch=1,EE,2B9466,short,??? // Chase Cam: Gear display Vertical position // 145
+
+//patch=1,EE,2B9474,short,??? // Chase Cam: Total mileage odometer Horizontal position // 25D
+//patch=1,EE,2B9476,short,??? // Chase Cam: Total mileage odometer Vertical position // 1A8
+
+//patch=1,EE,2B9484,short,??? // Chase Cam: Trip odometer Horizontal position // 20D
+//patch=1,EE,2B9486,short,??? // Chase Cam: Trip odometer Vertical position // 1A8
+
+//patch=1,EE,2B9494,short,??? // Chase Cam: ASM TCS Oil E-brake lights Horizontal position // 26C
+//patch=1,EE,2B9496,short,??? // Chase Cam: ASM TCS Oil E-brake lights Vertical position // 19F
+
+//patch=1,EE,2B94A4,short,??? // Chase Cam: ASM TCS Oil E-brake background Horizontal position // 26C
+//patch=1,EE,2B94A6,short,??? // Chase Cam: ASM TCS Oil E-brake background Vertical position // 1AE
