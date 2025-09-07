@@ -1,5 +1,5 @@
 gametitle=Gran Turismo 3 [SCPS-15009] (J)
-comment=32:9 Ultrawidescreen in-race
+comment=48:9 Ultrawidescreen in-race
 author=Duxi, further improved by Silentwarior112
 // LOD patch is needed to counteract the side effect of increasing the FOV this much
 patch=1,EE,21BD8A,short,1000
@@ -8,16 +8,16 @@ patch=1,EE,21F2E2,short,1000
 patch=1,EE,2212A2,short,1000
 
 // 4-Digit IEEE-754 floats
-patch=1,EE,17D908,short,3EC0 // Horizontal Field of view modifier
-patch=1,EE,17DA58,short,438A // Rear view mirror box horizontal position. // Move based on size difference divided by 2, rounded up
-patch=1,EE,17DA70,short,42B4 // Rear view mirror box horizontal size. Multiply by (16/new ratio)
-patch=1,EE,1920BC,short,3EC0 // Text-based HUD elements horizontal size. Multiply by (16/new ratio)
-patch=1,EE,189798,short,3EC0 // Text after licence completion, maybe more
-patch=1,EE,2271D8,short,3EC0 // ModelFace after license completion
-patch=1,EE,1C9400,short,3EC0 // CarFace width modifier in dealership // US version appears more correct when leaving the last 4 digits alone
+patch=1,EE,17D908,short,3E80 // Horizontal Field of view modifier
+patch=1,EE,17DA58,short,4391 // Rear view mirror box horizontal position. // Move based on size difference divided by 2, rounded up
+patch=1,EE,17DA70,short,4270 // Rear view mirror box horizontal size. Multiply by (16/new ratio)
+patch=1,EE,1920BC,short,3E80 // Text-based HUD elements horizontal size. Multiply by (16/new ratio)
+patch=1,EE,189798,short,3E80 // Text after licence completion, maybe more
+patch=1,EE,2271D8,short,3E80 // ModelFace after license completion
+patch=1,EE,1C9400,short,3E80 // CarFace width modifier in dealership // US version appears more correct when leaving the last 4 digits alone
 
 // 8-Digit IEEE-754 floats
-patch=1,EE,349F60,word,3F092329 // Rear view field of view
+patch=1,EE,349F60,word,3EB6D98C // Rear view field of view
 
 // The way these work is when changing the value, the canvas transforms AND moves too.
 // so you have to balance each side to stay centered.
@@ -33,8 +33,8 @@ patch=1,EE,349F60,word,3F092329 // Rear view field of view
 // (The Pause menu Positive value - 640) * -1 = The Pause menu Negative value
 patch=1,EE,349FD4,word,3F533333 // HUD Canvas resizing (Left)
 patch=1,EE,349FD8,word,3FE9999A // HUD Canvas resizing (Right)
-patch=1,EE,34A21E,short,C404 // Pause menu & race results canvas resizing (Negative)
-patch=1,EE,34A222,short,4492 // Pause menu & race results canvas resizing (Positive)
+patch=1,EE,34A21E,short,C46E // Pause menu & race results canvas resizing (Negative)
+patch=1,EE,34A222,short,44C7 // Pause menu & race results canvas resizing (Positive)
 // These last 2 are shorts in the Japansese version specifically
 
 

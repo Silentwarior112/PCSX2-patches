@@ -23,13 +23,12 @@ patch=1,EE,1CBF4E,word,3f124925 // CarFace width modifier in dealership
 // so you have to balance each side to stay centered.
 // A negative value and positive value are combined, the sum of which should equal 640 in order to be centered.
 // To calculate:
-// Figure out what your desired aspect ratio is when by 9, if not already.
-// For example, 24:9 is already by 9 so just plug in 24.
-// If the ratio is 3:2 for example, do 9 divided by _2_ = 4.5.
-// _3_ * _4.5_ = 13.5, so r = 13.5
-// 1.325 * r = a
-// 320 * (1 + a) = The Positive value
-// (The positive value - 640) * -1 = The negative value
+// Measure how much wider your current aspect is than the baseline (16:9).
+// Solve for a: Divide desired aspect ratio by 16/9 (8:3 is used as the example here)
+// (H/V) / (16/9) = a 	                                    | (8/3) / (16/9) = 1.5
+// a * 1.325 = b 		                                    | 1.5 * 1.325 = 1.9875
+// (1 + b) * 320  = The Positive value                      | (1 + 1.9875) * 320 = 956
+// (The positive value - 640) * -1 = The negative value     | (956 - 640) * -1 = -316
 patch=1,EE,3516F8,word,C36D0000 // HUD Canvas resizing (Negative)
 patch=1,EE,3516FC,word,445B4000 // HUD Canvas resizing (Positive)
 patch=1,EE,35194C,word,C36D0000 // Pause menu & race results canvas resizing (Negative)

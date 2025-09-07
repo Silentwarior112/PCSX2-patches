@@ -7,19 +7,35 @@ patch=1,EE,21CA16,short,1000
 patch=1,EE,21F2E2,short,1000
 patch=1,EE,2212A2,short,1000
 
-patch=1,EE,17D908,short,3F0F // Horizontal Field of view
-patch=1,EE,17DA58,short,4366 // Rear view Horizontal Field of view
-patch=1,EE,17DA70,short,4334 // Rear view mirror box horizontal size
-patch=1,EE,349F60,word,3F892329 //  Rear view rendering
+// 4-Digit IEEE-754 floats
+patch=1,EE,17D908,short,3F12 // Horizontal Field of view modifier
+patch=1,EE,17DA58,short,4365 // Rear view mirror box horizontal position. // Move based on size difference divided by 2, rounded up
+patch=1,EE,17DA70,short,4337 // Rear view mirror box horizontal size. Multiply by (16/new ratio)
+patch=1,EE,1920BC,short,3F12 // Text-based HUD elements horizontal size. Multiply by (16/new ratio)
+patch=1,EE,189798,short,3F12 // Text after licence completion, maybe more
+patch=1,EE,2271D8,short,3F12 // ModelFace after license completion
+patch=1,EE,1C9400,short,3F12 // CarFace width modifier in dealership // US version appears more correct when leaving the last 4 digits alone
 
-// The 1st/2nd/3rd in the corner does not seem to be movable since it's attached to all these other things
-patch=1,EE,1920BC,short,3F08 // 1st/2nd/3rd place etc., odometers, digital speedo, AT/MT, lap counter, etc. horizontal size
+// 8-Digit IEEE-754 floats
+patch=1,EE,349F60,word,3F8B506B // Rear view field of view
 
 // The way these work is when changing the value, the canvas transforms AND moves too.
-// so you have to balance each side to stay centered
-patch=1,EE,349FD6,word,3EC0 // HUD Canvas resizing (Left)
-patch=1,EE,349FDA,word,3FB0 // HUD Canvas resizing (Right)
-
+// so you have to balance each side to stay centered.
+// A negative value and positive value are combined, the sum of which should equal 640 in order to be centered.
+// To calculate:
+// Measure how much wider your current aspect is than the baseline (16:9).
+// Solve for a: Divide desired aspect ratio by 16/9 (8:3 is used as the example here)
+// (H/V) / (16/9) = a 	                                    | (8/3) / (16/9) = 1.5
+// a * 1.325 = b 		                                    | 1.5 * 1.325 = 1.9875
+// (1 + b) / 2  = The right value                           | (1 + 1.9875) / 2 = 1.49375
+// The right value - 1 = The left value                     | 1.49375 - 1 = 0.49375
+// The right value * 640 = The Pause menu Positive value
+// (The Pause menu Positive value - 640) * -1 = The Pause menu Negative value
+patch=1,EE,349FD4,word,3EBCCCCD // HUD Canvas resizing (Left)
+patch=1,EE,349FD8,word,3FAF3333 // HUD Canvas resizing (Right)
+patch=1,EE,34A21E,short,C36C // Pause menu & race results canvas resizing (Negative)
+patch=1,EE,34A222,short,445B // Pause menu & race results canvas resizing (Positive)
+// These last 2 are shorts in the Japansese version specifically
 
 
 
