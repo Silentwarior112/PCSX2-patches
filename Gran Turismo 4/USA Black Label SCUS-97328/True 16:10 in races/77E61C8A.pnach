@@ -1,0 +1,41 @@
+[True 16:10 / Steam Deck Patch]
+description=True 16:10 in races
+author=Silentwarior112
+// HUD Height
+patch=1,EE,0039BA44,short,4405 // 05 44 (532)
+
+// HUD V position
+// Wasn't able to find this one. Sorry!
+// Use the online public beta version if this bothers you
+
+// Text Height Adjustment
+patch=1,EE,0039BA60,short,01F2 // F2 01 (498) 
+
+// Rear view mirror height adjustment
+patch=1,EE,0033EF78,short,0215 // 15 02 (533) 
+
+// 3D Aspect adjustment
+patch=1,EE,00A44B78,word,3F68AB7E // 7E AB 68 3F (0.90)
+
+// Overscan Factor adjustment
+// If you want more or less FOV, edit this value. (IEEE-754 Float)
+patch=1,EE,00A44B7C,word,3F68AB7E // 7E AB 68 3F (0.90)
+
+// Multiply width multiplier by 1.0666 to maintain the original's width for menus. The mathematically correct number looks too narrow
+// Menu Text Width (addresses found by Aero_)
+// Dunno why the the bumper cam speedo is off center
+patch=1,EE,20492A30,extended,08125570 // j 004955C0
+patch=1,EE,204955C0,extended,3C090061 // lui t1,0x0061 : Widescreen Mode 1st-Half of Memory Address
+patch=1,EE,204955C4,extended,352984F0 // ori t1,0x84F0 : Widescreen Mode 2nd-Half of Memory Address
+patch=1,EE,204955C8,extended,812A0000 // lb t2,(t1)
+patch=1,EE,204955CC,extended,C65A0024 // lwc1 f26,0x24(s2)
+patch=1,EE,204955D0,extended,11400004 // beqz t2,0x004955E4 : Jumps if Widescreen Mode is Disabled
+patch=1,EE,204955D4,extended,3C013F63 // lui at,0x3F12 : Text Width 1st-Half of Float Value
+patch=1,EE,204955D8,extended,34210000 // ori at,0x0000 : Text Width 2nd-Half of Float Value
+patch=1,EE,204955DC,extended,4481A000 // mtc1 at,f20
+patch=1,EE,204955E0,extended,4614D682 // mul.s f26, f26, f20
+patch=1,EE,204955E4,extended,08124A8D // j 00492A34
+patch=1,EE,2044DBD8,extended,00000000 // nop
+
+// ModelFaces
+patch=1,EE,0010732C,word,3C013F55 // (x0.8333)
