@@ -1,0 +1,33 @@
+gametitle=Gran Turismo 4 [SCUS-97328] (U)
+
+[True 16:10 / Steam Deck Patch]
+description=(Greatest Hits Ver.) True 16:10 in races
+author=Silentwarior112
+// HUD Safe Zone
+// Have to scale the whole HUD down with this, only way to keep it centered
+patch=1,EE,0039BB54,word,3C013F8F // 1.111x / 90% margin
+
+// HUD Canvas resizing
+// Now stretch horizontally back out to the edges
+patch=1,EE,0039BA14,word,3C01C280 // D5C2013C
+patch=1,EE,0039BA20,word,3C01442F // 443A013C
+
+// HUD Text Height Adjustment
+patch=1,EE,0039BA60,short,0200 // F2 01 (512)
+
+// Rear view mirror height adjustment
+patch=1,EE,0033EF78,short,01F2 // 39 02 (498) 
+
+// 3D Aspect adjustment
+// Greatest Hits Ver. has a different address for this
+// Fixes 3D rendering to 16:10
+patch=1,EE,00A458F8,word,3F666666 // (0.90)
+
+// Overscan Factor adjustment
+// Greatest Hits Ver. has a different address for this
+// With 16:10 we get a little extra height, so this reflects that benefit
+// If you want more or less FOV, edit this value. (IEEE-754 Float)
+patch=1,EE,00A458FC,word,3F666666 // (0.90)
+
+// ModelFaces
+patch=1,EE,0010732C,word,3C013F55 // (x0.8333)
