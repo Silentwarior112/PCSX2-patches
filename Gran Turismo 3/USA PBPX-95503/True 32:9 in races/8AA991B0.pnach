@@ -1,6 +1,9 @@
 gametitle=Gran Turismo 3 - A-Spec PBPX-95503 (U)
 comment=32:9 Ultrawidescreen in-race
 author=Silentwarior112
+
+[True 32:9 Ultrawide]
+description=True 32:9 in races
 // LOD patch is needed to counteract the side effect of increasing the FOV this much
 patch=1,EE,21ED22,short,1000
 patch=1,EE,21F9AE,short,1000

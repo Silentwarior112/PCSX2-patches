@@ -1,6 +1,9 @@
 gametitle=Gran Turismo 3 - Europe (SCES-50294)
 comment=21:9 Ultrawidescreen in-race
 author=Silentwarior112
+
+[True 21:9 Ultrawide]
+description=True 21:9 in races
 // LOD patch is needed to counteract the side effect of increasing the FOV this much
 patch=1,EE,21FDA2,short,1000
 patch=1,EE,220A2E,short,1000
