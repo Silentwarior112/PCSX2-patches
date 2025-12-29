@@ -1,0 +1,11 @@
+gametitle=Gran Turismo 4 Online Public Beta [SCUS-97436] (U)
+
+[HUD Safe Area]
+description=90% margin safe area on HUD
+author=Silentwarior112
+// HUD safe area
+patch=1,EE,001C1334,short,3F88
+// Text Height Adjustment
+patch=1,EE,001C115C,short,01F2 // (498)
+// Text width Adjustment
+patch=1,EE,001C519C,word,3C013F2D // (~x0.90)
