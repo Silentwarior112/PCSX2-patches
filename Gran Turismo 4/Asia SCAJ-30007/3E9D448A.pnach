@@ -64,10 +64,11 @@ patch=1,EE,20C50323,extended,33522820 // " (R3"
 patch=1,EE,20C50327,extended,60202934 // "4) `"
 patch=1,EE,20C5032B,extended,20203030 // "00  "
 
-[Deinterlace menus]
+[Full progressive scan]
 author=Silentwarior112
-description=Progressive scan in menus. Use `No interlacing`
+description=Use `No interlacing`. 480p autoboot + Progressive menus
 patch=1,EE,0049AA2C,word,0000102D // 80A202C0
+patch=1,EE,00AB20F8,short,01 // 480p mode flag
 
 [Add GT4FP stiff cam]
 author=CookiePLMonster / Silentwarior112
