@@ -1,7 +1,0 @@
-gametitle=Gran Turismo 4 - China (SCCS-60002)
-comment=10 Billion Credits
-author=Silentwarior112
-
-// 10 Billion Credits
-patch=1,EE,209DB0E8,extended,3867B65E
-patch=1,EE,209DB0FC,extended,7A726F72

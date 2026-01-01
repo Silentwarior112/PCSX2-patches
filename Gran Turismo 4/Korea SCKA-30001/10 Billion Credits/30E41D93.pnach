@@ -1,7 +1,0 @@
-gametitle=Gran Turismo 4 - Korea (SCKA-30001)
-comment=10 Billion Credits
-author=Silentwarior112
-
-// 10 Billion Credits
-patch=1,EE,20A37B78,extended,3867B65E
-patch=1,EE,20A37B7C,extended,7A726F72

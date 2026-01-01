@@ -1,7 +1,0 @@
-gametitle=Gran Turismo 4 - Japan (SCPS-17001)
-comment=1 Trillion Credits
-author=Silentwarior112
-
-// 1 Trillion Credits
-patch=1,EE,20A8E518,extended,3867B65E
-patch=1,EE,20A8E51C,extended,7A726F72

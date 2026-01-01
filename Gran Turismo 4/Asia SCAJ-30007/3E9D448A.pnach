@@ -1,14 +1,12 @@
 gametitle=Gran Turismo 4 - Asia (SCAJ-30007)
-comment=Car paint and name strings fix
-
-[Various string fixes]
-description=Fixes strings that have full width unicode when should be standard, and/or outright invisible text glyphs
 author=Silentwarior112
 
-// Additional note: GT Mode icon strings with missing 1st letter
-is broken due to an emulation bug. This can be fixed with
-VU0 clamping mode set to extra (possible unwanted side effects), or, unchecking "Enable VU0 recompiler (Micro Mode)"
-in Advanced tab.
+[1st Letter fix]
+description=Uncheck "Enable VU0 recompiler (Micro Mode)" in Advanced tab.
+
+[Car paint strings fix]
+description=Fixes strings that have full width unicode when should be standard, and/or outright invisible text glyphs
+author=Silentwarior112
 
 // SpecDB String fix: Midget Cream
 patch=1,EE,20C55A1C,extended,6764694D // Midg
@@ -65,3 +63,53 @@ patch=1,EE,20C5031F,extended,63657053 // "Spec"
 patch=1,EE,20C50323,extended,33522820 // " (R3"
 patch=1,EE,20C50327,extended,60202934 // "4) `"
 patch=1,EE,20C5032B,extended,20203030 // "00  "
+
+[Deinterlace menus]
+author=Silentwarior112
+description=Progressive scan in menus. Use `No interlacing`
+patch=1,EE,0049AA2C,word,0000102D // 80A202C0
+
+[Add GT4FP stiff cam]
+author=CookiePLMonster / Silentwarior112
+patch=1,EE,2037500C,extended,84E30000
+patch=1,EE,10375010,extended,0002
+patch=1,EE,10375020,extended,0004
+patch=1,EE,20375030,extended,84E30000
+
+patch=1,EE,10375040,extended,0004
+patch=1,EE,00375058,extended,40
+patch=1,EE,1037506A,extended,8442
+
+patch=1,EE,206186C8,extended,00010000
+patch=1,EE,206186CC,extended,00060014
+
+[GT3-like chase camera]
+author=CookiePLMonster / Silentwarior112
+description=Looser chase camera
+// Camera damper, default - 120.0
+// Higher values make the camera center quicker
+patch=1,EE,20695988,extended,41F00000 // 30.0
+// Camera max angle, default - 15.0
+// Higher values make the camera lean further to the sides
+patch=1,EE,20695990,extended,41200000 // 10.0
+
+[Trigger Sensitivity]
+author=CookiePLMonster / Silentwarior112
+description=100% trigger press for full Gas, Brake, Reverse, & E-Brake
+//Throttle
+patch=1,EE,204346B0,extended,00000000
+patch=1,EE,104346BC,extended,00000064
+//Brake
+patch=1,EE,20434710,extended,00000000
+patch=1,EE,1043471C,extended,00000064
+//E-Brake
+patch=1,EE,20434770,extended,00000000
+patch=1,EE,1043477C,extended,00000064
+//Reverse
+patch=1,EE,204347D0,extended,00000000
+patch=1,EE,104347DC,extended,00000064
+
+[10 Billion Credits]
+author=Silentwarior112
+patch=1,EE,20A8BB98,extended,3867B65E
+patch=1,EE,20A8BB9C,extended,7A726F72

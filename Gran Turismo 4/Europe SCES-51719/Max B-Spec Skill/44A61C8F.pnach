@@ -1,7 +1,0 @@
-gametitle=Gran Turismo 4 - Europe (SCES-51719)
-comment=Max B-Spec Skill
-author=Silentwarior112
-
-// Max B-Spec Skill
-patch=1,EE,40A1DEF4,extended,00610001
-patch=1,EE,FFFFFFFF,extended,00000000

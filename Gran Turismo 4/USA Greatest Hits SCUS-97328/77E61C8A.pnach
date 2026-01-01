@@ -1,0 +1,176 @@
+gametitle=Gran Turismo 4 - USA 2.00 (SCUS-97328)
+
+
+[Deinterlace menus]
+author=Silentwarior112
+description=Progressive scan in menus. Use `No interlacing`
+patch=1,EE,004A2A2C,word,0000102D // 80A202C0
+
+[True 16:10 / Steam Deck Patch]
+description=(Greatest Hits Ver.) True 16:10 in races
+author=Silentwarior112
+// HUD Safe Zone
+// Have to scale the whole HUD down with this, only way to keep it centered
+patch=1,EE,0039BB54,word,3C013F8F // 1.111x / 90% margin
+
+// HUD Canvas resizing
+// Now stretch horizontally back out to the edges
+patch=1,EE,0039BA14,word,3C01C280 // D5C2013C
+patch=1,EE,0039BA20,word,3C01442F // 443A013C
+
+// HUD Text Height Adjustment
+patch=1,EE,0039BA60,short,0200 // F2 01 (512)
+
+// Rear view mirror height adjustment
+patch=1,EE,0033EF78,short,01F2 // 39 02 (498) 
+
+// 3D Aspect adjustment
+// Greatest Hits Ver. has a different address for this
+// Fixes 3D rendering to 16:10
+patch=1,EE,00A458F8,word,3F666666 // (0.90)
+
+// Overscan Factor adjustment
+// Greatest Hits Ver. has a different address for this
+// With 16:10 we get a little extra height, so this reflects that benefit
+// If you want more or less FOV, edit this value. (IEEE-754 Float)
+patch=1,EE,00A458FC,word,3F666666 // (0.90)
+
+// ModelFaces
+patch=1,EE,0010732C,word,3C013F55 // (x0.8333)
+
+[21:9 Ultrawide Hack]
+description=(Greatest Hits Ver.) True 21:9 Ultrawide in races
+author=Silentwarior112
+// Use this to override the 3D Rendering Aspect
+// Greatest Hits Ver. has a different address for this
+patch=1,EE,00A458F8,word,3FA8427E
+// OR change `Aspect` to 1.31 in the secret menu!
+
+// HUD Canvas resizing (Retail uses different values)
+patch=1,EE,0039BA14,word,3C01C36D // (-237) // D5C2013C
+patch=1,EE,0039BA20,word,3C01445B // ( 876) // 443A013C
+
+// Text width (Race HUD)
+patch=1,EE,0039F554,word,3C013F12 // (x0.5703125) // 403F013C
+// Rear view mirror width adjustment (not needed for 21:9, optional)
+//patch=1,EE,0033EF98,short,0348 // (840) // 8002 0824
+
+// Multiply width multiplier by 1.0666 to maintain the original's width for menus. The mathematically correct number looks too narrow
+// Menu Text Width (addresses found by Aero_)
+// Dunno why the the bumper cam speedo is off center
+patch=1,EE,20492A30,extended,08125570 // j 004955C0
+patch=1,EE,204955C0,extended,3C090061 // lui t1,0x0061 : Widescreen Mode 1st-Half of Memory Address
+patch=1,EE,204955C4,extended,352984F0 // ori t1,0x84F0 : Widescreen Mode 2nd-Half of Memory Address
+patch=1,EE,204955C8,extended,812A0000 // lb t2,(t1)
+patch=1,EE,204955CC,extended,C65A0024 // lwc1 f26,0x24(s2)
+patch=1,EE,204955D0,extended,11400004 // beqz t2,0x004955E4 : Jumps if Widescreen Mode is Disabled
+patch=1,EE,204955D4,extended,3C013F12 // lui at,0x3F12 : Text Width 1st-Half of Float Value
+patch=1,EE,204955D8,extended,34210000 // ori at,0x0000 : Text Width 2nd-Half of Float Value
+patch=1,EE,204955DC,extended,4481A000 // mtc1 at,f20
+patch=1,EE,204955E0,extended,4614D682 // mul.s f26, f26, f20
+patch=1,EE,204955E4,extended,08124A8D // j 00492A34
+patch=1,EE,2044DBD8,extended,00000000 // nop
+
+// ModelFaces
+patch=1,EE,0010732C,word,3C013F12 // 403F013C (x0.5703125)
+
+// Loading (320 * New / 16)
+patch=1,EE,00102BE0,word,3C0143D2 // A043013C ( 420) - Spinner
+patch=1,EE,00102C00,word,3C01C3D2 // 60C3013C (-420)
+
+// 320 / (New / 16)
+patch=1,EE,00103090,word,3C01C3D2 // 60C3013C (-244) - Loading image
+patch=1,EE,00103098,word,3C0143D2 // 6043013C ( 244)
+
+[32:9 Ultrawide Hack]
+description=(Greatest Hits Ver.) True 32:9 Ultrawide in races
+author=Silentwarior112
+// Use this to override the 3D Rendering Aspect
+// Greatest Hits Ver. has a different address for this
+patch=1,EE,00A458F8,word,40000000
+// OR change `Aspect` to 2.00 in the secret menu!
+
+// HUD Canvas resizing (Retail uses different values)
+patch=1,EE,0039BA14,word,3C01C404 // (-237) // D5C2013C
+patch=1,EE,0039BA20,word,3C014492 // ( 876) // 443A013C
+
+// Text width (Race HUD)
+patch=1,EE,0039F554,word,3C013EC0 // (x0.375) // 403F013C
+// Rear view mirror width adjustment
+patch=1,EE,0033EF98,short,03CF // (975)
+
+// Multiply width multiplier by 1.0666 to maintain the original's width for menus. The mathematically correct number looks too narrow
+// Menu Text Width (addresses found by Aero_)
+// Dunno why the the bumper cam speedo is off center
+patch=1,EE,20492A30,extended,08125570 // j 004955C0
+patch=1,EE,204955C0,extended,3C090061 // lui t1,0x0061 : Widescreen Mode 1st-Half of Memory Address
+patch=1,EE,204955C4,extended,352984F0 // ori t1,0x84F0 : Widescreen Mode 2nd-Half of Memory Address
+patch=1,EE,204955C8,extended,812A0000 // lb t2,(t1)
+patch=1,EE,204955CC,extended,C65A0024 // lwc1 f26,0x24(s2)
+patch=1,EE,204955D0,extended,11400004 // beqz t2,0x004955E4 : Jumps if Widescreen Mode is Disabled
+patch=1,EE,204955D4,extended,3C013EC0 // lui at,0x3EC0 : Text Width 1st-Half of Float Value
+patch=1,EE,204955D8,extended,34210000 // ori at,0x0000 : Text Width 2nd-Half of Float Value
+patch=1,EE,204955DC,extended,4481A000 // mtc1 at,f20
+patch=1,EE,204955E0,extended,4614D682 // mul.s f26, f26, f20
+patch=1,EE,204955E4,extended,08124A8D // j 00492A34
+patch=1,EE,2044DBD8,extended,00000000 // nop
+
+// ModelFaces
+patch=1,EE,0010732C,word,3C013EC0 // 403F013C (x0.375)
+
+// Loading (320 * New / 16)
+patch=1,EE,00102BE0,word,3C014420 // A043013C ( 420) - Spinner
+patch=1,EE,00102C00,word,3C01C420 // 60C3013C (-420)
+
+// 320 / (New / 16)
+patch=1,EE,00103090,word,3C01C420 // 60C3013C (-244) - Loading image
+patch=1,EE,00103098,word,3C014420 // 6043013C ( 244)
+
+[48:9 Ultrawide Hack]
+description=(Greatest Hits Ver.) True 48:9 Triple-wide in races
+author=Silentwarior112
+// You MUST use this to override the 3D Rendering Aspect ratio
+// The Aspect slider maxes out at 2.00, we need 3.00
+// Greatest Hits Ver. has a different address for this
+patch=1,EE,00A458F8,word,40400000
+
+// HUD Canvas resizing (Retail uses different values)
+patch=1,EE,0039BA14,word,3C01C46E // (-237) // D5C2013C
+patch=1,EE,0039BA20,word,3C0144C7 // ( 876) // 443A013C
+
+// Text width (Race HUD)
+patch=1,EE,0039F554,word,3C013E80 // (x0.25) // 403F013C
+// Rear view mirror width adjustment
+patch=1,EE,0033EF98,short,05B7 // (1463)
+
+// Multiply width multiplier by 1.0666 to maintain the original's width for menus. The mathematically correct number looks too narrow
+// Menu Text Width (addresses found by Aero_)
+// Dunno why the the bumper cam speedo is off center
+patch=1,EE,20492A30,extended,08125570 // j 004955C0
+patch=1,EE,204955C0,extended,3C090061 // lui t1,0x0061 : Widescreen Mode 1st-Half of Memory Address
+patch=1,EE,204955C4,extended,352984F0 // ori t1,0x84F0 : Widescreen Mode 2nd-Half of Memory Address
+patch=1,EE,204955C8,extended,812A0000 // lb t2,(t1)
+patch=1,EE,204955CC,extended,C65A0024 // lwc1 f26,0x24(s2)
+patch=1,EE,204955D0,extended,11400004 // beqz t2,0x004955E4 : Jumps if Widescreen Mode is Disabled
+patch=1,EE,204955D4,extended,3C013E80 // lui at,0x3EC0 : Text Width 1st-Half of Float Value
+patch=1,EE,204955D8,extended,34210000 // ori at,0x0000 : Text Width 2nd-Half of Float Value
+patch=1,EE,204955DC,extended,4481A000 // mtc1 at,f20
+patch=1,EE,204955E0,extended,4614D682 // mul.s f26, f26, f20
+patch=1,EE,204955E4,extended,08124A8D // j 00492A34
+patch=1,EE,2044DBD8,extended,00000000 // nop
+
+// ModelFaces
+patch=1,EE,0010732C,word,3C013E80 // 403F013C (x0.25)
+
+// Loading (320 * New / 16)
+patch=1,EE,00102BE0,word,3C014460 // A043013C ( 896) - Spinner
+patch=1,EE,00102C00,word,3C01C460 // 60C3013C (-896)
+
+// 320 / (New / 16)
+patch=1,EE,00103090,word,3C01C460 // 60C3013C (-896) - Loading image
+patch=1,EE,00103098,word,3C014460 // 6043013C ( 896)
+
+[10 Billion Credits]
+author=Silentwarior112
+patch=1,EE,20A20A28,extended,5EB66738
+patch=1,EE,20A20A2C,extended,726F727A

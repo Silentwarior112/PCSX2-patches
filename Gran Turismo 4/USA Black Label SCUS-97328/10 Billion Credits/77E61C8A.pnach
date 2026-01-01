@@ -1,8 +1,0 @@
-gametitle=Gran Turismo 4 - USA 1.00 (SCUS-97328)
-comment=10 Billion Credits
-author=Silentwarior112
-
-// 10 Billion Credits
-
-patch=1,EE,20A1FCA8,extended,3867B65E
-patch=1,EE,20A1FCAC,extended,7A726F72

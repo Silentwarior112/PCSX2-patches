@@ -1,6 +1,0 @@
-gametitle=Gran Turismo 4 - USA 1.00 (SCUS-97328)
-comment=Deinterlace menus (Set PCSX2 Deinterlacing to "No Deinterlacing")
-author=Silentwarior112, ported from Agrippa's code from PAL region
-
-// Deinterlace menus: Korea, China review copy, and both US Black label and GH
-patch=1,EE,004A2A2C,word,0000102D // 80A202C0

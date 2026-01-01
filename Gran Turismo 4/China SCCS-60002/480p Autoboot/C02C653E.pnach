@@ -1,7 +1,0 @@
-gametitle=Gran Turismo 4 - China (SCCS-60002)
-comment=480p Autoboot
-author=Silentwarior112, ported from Aero_'s codes for other regions. Original patch by Cookieplmonster
-
-// 480p Autoboot
-patch=1,EE,204359E0,extended,AE0516B0 // E8 10 00 AE --> B0 16 05 AE
-patch=1,EE,10435AD0,extended,10E8     // B0 16 --> E8 16

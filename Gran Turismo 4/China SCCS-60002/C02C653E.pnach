@@ -1,0 +1,53 @@
+gametitle=Gran Turismo 4 - China (SCCS-60002)
+
+[Full progressive scan]
+author=Silentwarior112
+description=Use `No interlacing`. 480p autoboot + Progressive menus
+patch=1,EE,204359E0,extended,AE0516B0 // E8 10 00 AE --> B0 16 05 AE
+patch=1,EE,10435AD0,extended,10E8     // B0 16 --> E8 16
+patch=1,EE,004A2A2C,word,0000102D // 80A202C0
+
+[Add GT4FP stiff cam]
+author=CookiePLMonster / Silentwarior112
+patch=1,EE,2038428C,extended,84E30000
+patch=1,EE,10384290,extended,0002
+patch=1,EE,103842A0,extended,0004
+patch=1,EE,203842B0,extended,84E30000
+
+patch=1,EE,103842C0,extended,0004
+patch=1,EE,003842D8,extended,40
+patch=1,EE,103842EA,extended,8442
+
+patch=1,EE,20623F28,extended,00010000
+patch=1,EE,20623F2C,extended,00060014
+
+[GT3-like chase camera]
+author=CookiePLMonster / Silentwarior112
+description=Looser chase camera
+// Camera damper, default - 120.0
+// Higher values make the camera center quicker
+patch=1,EE,206A2910,extended,41F00000 // 30.0
+// Camera max angle, default - 15.0
+// Higher values make the camera lean further to the sides
+patch=1,EE,206A2918,extended,41200000 // 10.0
+
+[Trigger Sensitivity]
+author=CookiePLMonster / Silentwarior112
+description=100% trigger press for full Gas, Brake, Reverse, & E-Brake
+//Throttle
+patch=1,EE,2043B470,extended,00000000
+patch=1,EE,1043B47C,extended,00000064
+//Brake
+patch=1,EE,2043B4D0,extended,00000000
+patch=1,EE,1043B4DC,extended,00000064
+//E-Brake
+patch=1,EE,2043B530,extended,00000000
+patch=1,EE,1043B53C,extended,00000064
+//Reverse
+patch=1,EE,2043B590,extended,00000000
+patch=1,EE,1043B59C,extended,00000064
+
+[10 Billion Credits]
+author=Silentwarior112
+patch=1,EE,209DB0E8,extended,3867B65E
+patch=1,EE,209DB0FC,extended,7A726F72

@@ -1,0 +1,26 @@
+gametitle=Gran Turismo 4 - Japanese Online Test Version (PAPX-90523)
+
+[Deinterlace menus]
+author=Silentwarior112
+description=Progressive scan in menus. Use `No interlacing`
+patch=1,EE,0059EC5C,word,0000102D // 80A202C0
+
+[Trigger Sensitivity]
+author=CookiePLMonster / Silentwarior112
+description=100% trigger press for full Gas, Brake, Reverse, & E-Brake
+//Throttle
+patch=1,EE,20318CFC,extended,24110064
+patch=1,EE,20318D7C,extended,00000000
+//Brake
+patch=1,EE,20318D00,extended,24100164
+patch=1,EE,20318DD8,extended,00000000
+//E-Brake
+patch=1,EE,20318D04,extended,24160064
+patch=1,EE,20318E30,extended,00000000
+//Reverse
+patch=1,EE,20318D08,extended,24150064
+patch=1,EE,20318E84,extended,00000000
+
+[1 Trillion Credits]
+patch=1,EE,209A5728,extended,3867B65E
+patch=1,EE,209A572C,extended,7A726F72
