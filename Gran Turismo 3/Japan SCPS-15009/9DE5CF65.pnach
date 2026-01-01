@@ -16,7 +16,7 @@ patch=1,EE,17DA70,short,4337 // Rear view mirror box horizontal size. Multiply b
 patch=1,EE,1920BC,short,3F12 // Text-based HUD elements horizontal size. Multiply by (16/new ratio)
 patch=1,EE,189798,short,3F12 // Text after licence completion, maybe more
 patch=1,EE,2271D8,short,3F12 // ModelFace after license completion
-patch=1,EE,1C9400,short,3F12 // CarFace width modifier in dealership // US version appears more correct when leaving the last 4 digits alone
+patch=1,EE,1C9400,short,3F12 // CarFace width modifier in dealership
 
 // 8-Digit IEEE-754 floats
 patch=1,EE,349F60,word,3F8B506B // Rear view field of view
@@ -99,7 +99,7 @@ patch=1,EE,17DA70,short,42B4 // Rear view mirror box horizontal size. Multiply b
 patch=1,EE,1920BC,short,3EC0 // Text-based HUD elements horizontal size. Multiply by (16/new ratio)
 patch=1,EE,189798,short,3EC0 // Text after licence completion, maybe more
 patch=1,EE,2271D8,short,3EC0 // ModelFace after license completion
-patch=1,EE,1C9400,short,3EC0 // CarFace width modifier in dealership // US version appears more correct when leaving the last 4 digits alone
+//patch=1,EE,1C9400,short,3EC0 // Optional: CarFace width modifier in dealership
 
 // 8-Digit IEEE-754 floats
 patch=1,EE,349F60,word,3F092329 // Rear view field of view
@@ -138,7 +138,7 @@ patch=1,EE,17DA70,short,4270 // Rear view mirror box horizontal size. Multiply b
 patch=1,EE,1920BC,short,3E80 // Text-based HUD elements horizontal size. Multiply by (16/new ratio)
 patch=1,EE,189798,short,3E80 // Text after licence completion, maybe more
 patch=1,EE,2271D8,short,3E80 // ModelFace after license completion
-patch=1,EE,1C9400,short,3E80 // CarFace width modifier in dealership // US version appears more correct when leaving the last 4 digits alone
+//patch=1,EE,1C9400,short,3E80 // Optional: CarFace width modifier in dealership
 
 // 8-Digit IEEE-754 floats
 patch=1,EE,349F60,word,3EB6D98C // Rear view field of view

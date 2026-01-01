@@ -55,7 +55,7 @@ patch=1,EE,22B210,short,3EC0 // ModelFace after license completion width modifie
 
 // 8-Digit IEEE-754 floats
 patch=1,EE,351674,word,3F092329 // Rear view field of view. Multiply 1.428514 by (16/newRatio)
-patch=1,EE,1CBF4E,word,3EC00000 // CarFace width modifier in dealership
+//patch=1,EE,1CBF4E,word,3EC00000 // Optional: CarFace width modifier in dealership
 
 // The way these work is when changing the value, the canvas transforms AND moves too.
 // so you have to balance each side to stay centered.
@@ -92,7 +92,7 @@ patch=1,EE,22B210,short,3E80 // ModelFace after license completion width modifie
 
 // 8-Digit IEEE-754 floats
 patch=1,EE,351674,word,3EB6D98C // Rear view field of view. Multiply 1.428514 by (16/newRatio)
-patch=1,EE,1CBF4E,word,3E800000 // CarFace width modifier in dealership
+//patch=1,EE,1CBF4E,word,3E800000 // Optional: CarFace width modifier in dealership
 
 // The way these work is when changing the value, the canvas transforms AND moves too.
 // so you have to balance each side to stay centered.
