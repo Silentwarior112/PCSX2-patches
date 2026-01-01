@@ -153,6 +153,26 @@ patch=1,EE,001028B8,word,3C0143D2 // ( 960)
 // 0033F4E0,word,3C01448C // (2560) (Text)
 // 001FDD4C,word,3C01448C // (2560) (BG)
 
+[48:9 Triple Screen (No menu scaling)]
+description=48:9 Alternate: Crop during menus, uncrop during races
+author=Silentwarior112
+// You MUST use this to override the 3D Rendering Aspect ratio
+// The Aspect slider maxes out at 2.00, we need 3.00
+patch=1,EE,0099C3C8,word,40400000
+
+// HUD Canvas resizing
+patch=1,EE,001C10FC,word,3C01C507 // (-2160)
+patch=1,EE,001C1130,word,3C014495 // ( 1192)
+// Text width (Race HUD)
+patch=1,EE,001C519C,word,3C013E80 // (x0.25)
+// Rear view Mirror width
+patch=1,EE,001EB65C,short,05B7 // (1463)
+
+// Optional: Pause Menu & B-Spec Monitor (No centering)
+// 640 * (New / 12)
+// 0033F4E0,word,3C01448C // (2560) (Text)
+// 001FDD4C,word,3C01448C // (2560) (BG)
+
 [Max B-Spec skill]
 patch=1,EE,409BA434,extended,006F0001
 patch=1,EE,FFFFFFFF,extended,00000000
@@ -170,4 +190,5 @@ patch=1,EE,2BA77C,short,3F80
 patch=1,EE,2BA77C,short,3F81
 
 [Cinematic chase cam 2]
+
 patch=1,EE,2BA77C,short,3F7F
