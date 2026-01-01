@@ -156,3 +156,18 @@ patch=1,EE,001028B8,word,3C0143D2 // ( 960)
 [Max B-Spec skill]
 patch=1,EE,409BA434,extended,006F0001
 patch=1,EE,FFFFFFFF,extended,00000000
+
+[Enable Collision]
+patch=1,EE,2941B8,short,3F80
+
+[Disable Collision]
+patch=1,EE,2941B8,short,3F00
+
+[Reset chase cam]
+patch=1,EE,2BA77C,short,3F80
+
+[Cinematic chase cam 1]
+patch=1,EE,2BA77C,short,3F81
+
+[Cinematic chase cam 2]
+patch=1,EE,2BA77C,short,3F7F
