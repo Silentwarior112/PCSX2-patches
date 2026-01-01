@@ -1,8 +1,7 @@
 gametitle=Gran Turismo 3 [SCPS-15009] (J)
-comment=21:9 Ultrawidescreen in-race
-author=Duxi, further improved by Silentwarior112
 
 [True 21:9 Ultrawide]
+author=Duxi / Silentwarior112
 description=True 21:9 in races
 // LOD patch is needed to counteract the side effect of increasing the FOV this much
 patch=1,EE,21BD8A,short,1000
@@ -39,8 +38,6 @@ patch=1,EE,349FD8,word,3FAF3333 // HUD Canvas resizing (Right)
 patch=1,EE,34A21E,short,C36C // Pause menu & race results canvas resizing (Negative)
 patch=1,EE,34A222,short,445B // Pause menu & race results canvas resizing (Positive)
 // These last 2 are shorts in the Japansese version specifically
-
-
 
 // Extra goodies not needed by this method
 // You can mess with these in the PCSX2 debugger
@@ -85,3 +82,81 @@ patch=1,EE,34A222,short,445B // Pause menu & race results canvas resizing (Posit
 
 //patch=1,EE,2B94A4,short,??? // Chase Cam: ASM TCS Oil E-brake background Horizontal position // 26C
 //patch=1,EE,2B94A6,short,??? // Chase Cam: ASM TCS Oil E-brake background Vertical position // 1AE
+
+[True 32:9 Ultrawide]
+author=Duxi / Silentwarior112
+description=True 32:9 in races
+// LOD patch is needed to counteract the side effect of increasing the FOV this much
+patch=1,EE,21BD8A,short,1000
+patch=1,EE,21CA16,short,1000
+patch=1,EE,21F2E2,short,1000
+patch=1,EE,2212A2,short,1000
+
+// 4-Digit IEEE-754 floats
+patch=1,EE,17D908,short,3EC0 // Horizontal Field of view modifier
+patch=1,EE,17DA58,short,438A // Rear view mirror box horizontal position. // Move based on size difference divided by 2, rounded up
+patch=1,EE,17DA70,short,42B4 // Rear view mirror box horizontal size. Multiply by (16/new ratio)
+patch=1,EE,1920BC,short,3EC0 // Text-based HUD elements horizontal size. Multiply by (16/new ratio)
+patch=1,EE,189798,short,3EC0 // Text after licence completion, maybe more
+patch=1,EE,2271D8,short,3EC0 // ModelFace after license completion
+patch=1,EE,1C9400,short,3EC0 // CarFace width modifier in dealership // US version appears more correct when leaving the last 4 digits alone
+
+// 8-Digit IEEE-754 floats
+patch=1,EE,349F60,word,3F092329 // Rear view field of view
+
+// The way these work is when changing the value, the canvas transforms AND moves too.
+// so you have to balance each side to stay centered.
+// A negative value and positive value are combined, the sum of which should equal 640 in order to be centered.
+// To calculate:
+// Measure how much wider your current aspect is than the baseline (16:9).
+// Solve for a: Divide desired aspect ratio by 16/9 (8:3 is used as the example here)
+// (H/V) / (16/9) = a 	                                    | (8/3) / (16/9) = 1.5
+// a * 1.325 = b 		                                    | 1.5 * 1.325 = 1.9875
+// (1 + b) / 2  = The right value                           | (1 + 1.9875) / 2 = 1.49375
+// The right value - 1 = The left value                     | 1.49375 - 1 = 0.49375
+// The right value * 640 = The Pause menu Positive value
+// (The Pause menu Positive value - 640) * -1 = The Pause menu Negative value
+patch=1,EE,349FD4,word,3F533333 // HUD Canvas resizing (Left)
+patch=1,EE,349FD8,word,3FE9999A // HUD Canvas resizing (Right)
+patch=1,EE,34A21E,short,C404 // Pause menu & race results canvas resizing (Negative)
+patch=1,EE,34A222,short,4492 // Pause menu & race results canvas resizing (Positive)
+// These last 2 are shorts in the Japansese version specifically
+
+[True 48:9 Triple-wide]
+author=Duxi / Silentwarior112
+description=True 48:9 in races
+// LOD patch is needed to counteract the side effect of increasing the FOV this much
+patch=1,EE,21BD8A,short,1000
+patch=1,EE,21CA16,short,1000
+patch=1,EE,21F2E2,short,1000
+patch=1,EE,2212A2,short,1000
+
+// 4-Digit IEEE-754 floats
+patch=1,EE,17D908,short,3E80 // Horizontal Field of view modifier
+patch=1,EE,17DA58,short,4391 // Rear view mirror box horizontal position. // Move based on size difference divided by 2, rounded up
+patch=1,EE,17DA70,short,4270 // Rear view mirror box horizontal size. Multiply by (16/new ratio)
+patch=1,EE,1920BC,short,3E80 // Text-based HUD elements horizontal size. Multiply by (16/new ratio)
+patch=1,EE,189798,short,3E80 // Text after licence completion, maybe more
+patch=1,EE,2271D8,short,3E80 // ModelFace after license completion
+patch=1,EE,1C9400,short,3E80 // CarFace width modifier in dealership // US version appears more correct when leaving the last 4 digits alone
+
+// 8-Digit IEEE-754 floats
+patch=1,EE,349F60,word,3EB6D98C // Rear view field of view
+
+// The way these work is when changing the value, the canvas transforms AND moves too.
+// so you have to balance each side to stay centered.
+// A negative value and positive value are combined, the sum of which should equal 640 in order to be centered.
+// To calculate:
+// Measure how much wider your current aspect is than the baseline (16:9).
+// Solve for a: Divide desired aspect ratio by 16/9 (8:3 is used as the example here)
+// (H/V) / (16/9) = a 	                                    | (8/3) / (16/9) = 1.5
+// a * 1.325 = b 		                                    | 1.5 * 1.325 = 1.9875
+// (1 + b) / 2  = The right value                           | (1 + 1.9875) / 2 = 1.49375
+// The right value - 1 = The left value                     | 1.49375 - 1 = 0.49375
+// The right value * 640 = The Pause menu Positive value
+// (The Pause menu Positive value - 640) * -1 = The Pause menu Negative value
+patch=1,EE,349FD4,word,3F533333 // HUD Canvas resizing (Left)
+patch=1,EE,349FD8,word,3FE9999A // HUD Canvas resizing (Right)
+patch=1,EE,34A21E,short,C46E // Pause menu & race results canvas resizing (Negative)
+patch=1,EE,34A222,short,44C7 // Pause menu & race results canvas resizing (Positive)
+// These last 2 are shorts in the Japansese version specifically

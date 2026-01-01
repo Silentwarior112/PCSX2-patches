@@ -1,0 +1,225 @@
+gametitle=Gran Turismo 3 - Europe (SCES-50294)
+
+[True 21:9 Ultrawide]
+author=Silentwarior112
+description=True 21:9 in races
+// LOD patch is needed to counteract the side effect of increasing the FOV this much
+patch=1,EE,21FDA2,short,1000
+patch=1,EE,220A2E,short,1000
+patch=1,EE,2232FA,short,1000
+patch=1,EE,2252BA,short,1000
+
+// 4-Digit IEEE-754 floats
+patch=1,EE,17F2CC,short,3F12 // Horizontal Field of view modifier
+patch=1,EE,17F41C,short,4365 // Rear view mirror box horizontal position. // Add/subtract from 200 based on size difference divided by 2, rounded up
+patch=1,EE,17F430,short,4337 // Rear view mirror box width. Multiply 240 by (16/new ratio)
+patch=1,EE,194568,short,3F12 // Text-based HUD elements width modifier
+patch=1,EE,18B870,short,3F12 // Text after licence completion width modifier, maybe more things
+patch=1,EE,22B210,short,3F12 // ModelFace after license completion width modifier
+
+// 8-Digit IEEE-754 floats
+patch=1,EE,351674,word,3F8B506B // Rear view field of view. Multiply 1.428514 by (16/newRatio)
+patch=1,EE,1CBF4E,word,3f124925 // CarFace width modifier in dealership
+
+// The way these work is when changing the value, the canvas transforms AND moves too.
+// so you have to balance each side to stay centered.
+// A negative value and positive value are combined, the sum of which should equal 640 in order to be centered.
+// To calculate:
+// Measure how much wider your current aspect is than the baseline (16:9).
+// Solve for a: Divide desired aspect ratio by 16/9 (8:3 is used as the example here)
+// (H/V) / (16/9) = a 	                                    | (8/3) / (16/9) = 1.5
+// a * 1.325 = b 		                                    | 1.5 * 1.325 = 1.9875
+// (1 + b) * 320  = The Positive value                      | (1 + 1.9875) * 320 = 956
+// (The positive value - 640) * -1 = The negative value     | (956 - 640) * -1 = -316
+patch=1,EE,3516F8,word,C36D0000 // HUD Canvas resizing (Negative)
+patch=1,EE,3516FC,word,445B4000 // HUD Canvas resizing (Positive)
+patch=1,EE,35194C,word,C36D0000 // Pause menu & race results canvas resizing (Negative)
+patch=1,EE,351950,word,445B4000 // Pause menu & race results canvas resizing (Positive)
+
+[True 32:9 Ultrawide]
+author=Silentwarior112
+description=True 32:9 in races
+// LOD patch is needed to counteract the side effect of increasing the FOV this much
+patch=1,EE,21FDA2,short,1000
+patch=1,EE,220A2E,short,1000
+patch=1,EE,2232FA,short,1000
+patch=1,EE,2252BA,short,1000
+
+// 4-Digit IEEE-754 floats
+patch=1,EE,17F2CC,short,3EC0 // Horizontal Field of view modifier
+patch=1,EE,17F41C,short,438A // Rear view mirror box horizontal position. // Add/subtract from 200 based on size difference divided by 2, rounded up
+patch=1,EE,17F430,short,42B4 // Rear view mirror box width. Multiply 240 by (16/new ratio)
+patch=1,EE,194568,short,3EC0 // Text-based HUD elements width modifier
+patch=1,EE,18B870,short,3EC0 // Text after licence completion width modifier, maybe more things
+patch=1,EE,22B210,short,3EC0 // ModelFace after license completion width modifier
+
+// 8-Digit IEEE-754 floats
+patch=1,EE,351674,word,3F092329 // Rear view field of view. Multiply 1.428514 by (16/newRatio)
+patch=1,EE,1CBF4E,word,3EC00000 // CarFace width modifier in dealership
+
+// The way these work is when changing the value, the canvas transforms AND moves too.
+// so you have to balance each side to stay centered.
+// A negative value and positive value are combined, the sum of which should equal 640 in order to be centered.
+// To calculate:
+// Measure how much wider your current aspect is than the baseline (16:9).
+// Solve for a: Divide desired aspect ratio by 16/9 (8:3 is used as the example here)
+// (H/V) / (16/9) = a 	                                    | (8/3) / (16/9) = 1.5
+// a * 1.325 = b 		                                    | 1.5 * 1.325 = 1.9875
+// (1 + b) * 320  = The Positive value                      | (1 + 1.9875) * 320 = 956
+// (The positive value - 640) * -1 = The negative value     | (956 - 640) * -1 = -316
+patch=1,EE,3516F8,word,C4040000 // HUD Canvas resizing (Negative)
+patch=1,EE,3516FC,word,44920000 // HUD Canvas resizing (Positive)
+patch=1,EE,35194C,word,C4040000 // Pause menu & race results canvas resizing (Negative)
+patch=1,EE,351950,word,44920000 // Pause menu & race results canvas resizing (Positive)
+
+
+[True 48:9 Triple-wide]
+author=Silentwarior112
+description=True 48:9 in races
+// LOD patch is needed to counteract the side effect of increasing the FOV this much
+patch=1,EE,21FDA2,short,1000
+patch=1,EE,220A2E,short,1000
+patch=1,EE,2232FA,short,1000
+patch=1,EE,2252BA,short,1000
+
+// 4-Digit IEEE-754 floats
+patch=1,EE,17F2CC,short,3E80 // Horizontal Field of view modifier
+patch=1,EE,17F41C,short,4391 // Rear view mirror box horizontal position. // Add/subtract from 200 based on size difference divided by 2, rounded up
+patch=1,EE,17F430,short,4270 // Rear view mirror box width. Multiply 240 by (16/new ratio)
+patch=1,EE,194568,short,3E80 // Text-based HUD elements width modifier
+patch=1,EE,18B870,short,3E80 // Text after licence completion width modifier, maybe more things
+patch=1,EE,22B210,short,3E80 // ModelFace after license completion width modifier
+
+// 8-Digit IEEE-754 floats
+patch=1,EE,351674,word,3EB6D98C // Rear view field of view. Multiply 1.428514 by (16/newRatio)
+patch=1,EE,1CBF4E,word,3E800000 // CarFace width modifier in dealership
+
+// The way these work is when changing the value, the canvas transforms AND moves too.
+// so you have to balance each side to stay centered.
+// A negative value and positive value are combined, the sum of which should equal 640 in order to be centered.
+// To calculate:
+// Measure how much wider your current aspect is than the baseline (16:9).
+// Solve for a: Divide desired aspect ratio by 16/9 (8:3 is used as the example here)
+// (H/V) / (16/9) = a 	                                    | (8/3) / (16/9) = 1.5
+// a * 1.325 = b 		                                    | 1.5 * 1.325 = 1.9875
+// (1 + b) * 320  = The Positive value                      | (1 + 1.9875) * 320 = 956
+// (The positive value - 640) * -1 = The negative value     | (956 - 640) * -1 = -316
+patch=1,EE,3516F8,word,C46E0000 // HUD Canvas resizing (Negative)
+patch=1,EE,3516FC,word,44C70000 // HUD Canvas resizing (Positive)
+patch=1,EE,35194C,word,C46E0000 // Pause menu & race results canvas resizing (Negative)
+patch=1,EE,351950,word,44C70000 // Pause menu & race results canvas resizing (Positive)
+
+[Reset HUD Safe Area]
+author=Silentwarior112
+description=Default HUD safe area
+patch=1,EE,2567BC,short,3F80
+// Text Width
+patch=1,EE,194568,short,3F40
+// Text Height
+patch=1,EE,194570,short,3F80
+// Rear view mirror V position
+patch=1,EE,35165A,short,41B6
+// Rear view V size
+patch=1,EE,35165E,short,4292
+// Rear view mirror H position
+patch=1,EE,17F41C,short,4348
+// Rear view H size
+patch=1,EE,17F430,short,4370 
+
+[HUD Safe Area (Zoom out)]
+author=Silentwarior112
+description=90% HUD safe area. Warning: Affects menus
+// Safe area
+patch=1,EE,2567BC,short,3F88
+// Text Width
+patch=1,EE,194568,short,3F36 // Math suggests 0.675 3F2D
+// Text Height
+patch=1,EE,194570,short,3F73 // Math suggests 0.9 3F67
+// Rear view mirror V position
+patch=1,EE,35165A,short,4220
+// Rear view V size
+patch=1,EE,35165E,short,4280
+// Rear view mirror H position
+patch=1,EE,17F41C,short,434F
+// Rear view H size
+patch=1,EE,17F430,short,4364
+// LODs
+patch=1,EE,21FDA2,short,1000
+patch=1,EE,220A2E,short,1000
+patch=1,EE,2232FA,short,1000
+patch=1,EE,2252BA,short,1000
+
+
+[LOD patch]
+description=Eliminates most LOD pop-in during races
+patch=1,EE,21FDA2,short,1000
+patch=1,EE,220A2E,short,1000
+patch=1,EE,2232FA,short,1000
+patch=1,EE,2252BA,short,1000
+
+[Reset FOV]
+description=Revert Field of view to Default (60°)
+patch=1,EE,20352098,extended,40C90FDB
+
+[FOV 65]
+description=Increase Field of view to 65°
+patch=1,EE,20352098,extended,40D9D12D
+
+[FOV 70]
+description=Increase Field of view to 70°
+patch=1,EE,20352098,extended,40EA927F
+
+[FOV 80]
+description=Increase Field of view to 80°
+patch=1,EE,20352098,extended,41060A92
+
+[FOV 90]
+description=Increase Field of view to 90°
+patch=1,EE,20352098,extended,4116CBE4
+
+[15,000 Cr.]
+description=Original NTSC-J ver. starting credits
+patch=1,EE,2094E0F8,word,00003A98
+
+[18,000 Cr.]
+description=Starting credits
+patch=1,EE,2094E0F8,word,00004650
+
+[999,999,999 Cr.]
+patch=1,EE,2094E0F8,word,3B9AC9FF
+
+[No oil degradation]
+author=Silentwarior112
+description=Engine oil will not go bad
+patch=1,EE,201E0004,extended,00000000
+patch=1,EE,201EB970,extended,00000000
+
+[Reset Downforce]
+author=Silentwarior112
+description=Reset downforce
+patch=1,EE,351ED6,short,411C
+
+[Downforce Boost]
+author=Silentwarior112
+description=More downforce
+patch=1,EE,351ED6,short,4160
+
+[Downforce Boost 2]
+author=Silentwarior112
+description=Mega downforce
+patch=1,EE,351ED6,short,41A0
+
+[Downforce Boost 3]
+author=Silentwarior112
+description=Giga downforce
+patch=1,EE,351ED6,short,4200
+
+[Downforce Boost 4]
+author=Silentwarior112
+description=Super downforce
+patch=1,EE,351ED6,short,4280
+
+[Downforce Boost 5]
+author=Silentwarior112
+description=Stupid downforce
+patch=1,EE,351ED6,short,42F0
