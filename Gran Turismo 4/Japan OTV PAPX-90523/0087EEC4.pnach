@@ -1,9 +1,10 @@
 gametitle=Gran Turismo 4 - Japanese Online Test Version (PAPX-90523)
 
-[Deinterlace menus]
+[Full progressive scan]
 author=Silentwarior112
-description=Progressive scan in menus. Use `No interlacing`
+description=Use `No interlacing`. 480p autoboot + Progressive menus
 patch=1,EE,0059EC5C,word,0000102D // 80A202C0
+patch=1,EE,0099C4A8,short,01 // 480p mode flag
 
 [Trigger Sensitivity]
 author=CookiePLMonster / Silentwarior112
@@ -23,4 +24,5 @@ patch=1,EE,20318E84,extended,00000000
 
 [1 Trillion Credits]
 patch=1,EE,209A5728,extended,3867B65E
+
 patch=1,EE,209A572C,extended,7A726F72
