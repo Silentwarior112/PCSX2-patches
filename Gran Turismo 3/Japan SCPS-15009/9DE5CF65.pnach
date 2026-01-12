@@ -1,5 +1,12 @@
 gametitle=Gran Turismo 3 [SCPS-15009] (J)
 
+[LOD patch]
+description=Eliminates most LOD pop-in during races
+patch=1,EE,21BD8A,short,1000
+patch=1,EE,21CA16,short,1000
+patch=1,EE,21F2E2,short,1000
+patch=1,EE,2212A2,short,1000
+
 [True 21:9 Ultrawide]
 author=Duxi / Silentwarior112
 description=True 21:9 in races

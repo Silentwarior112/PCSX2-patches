@@ -1,5 +1,12 @@
 gametitle=Gran Turismo 3 - A-Spec SCUS-97102 (U)
 
+[LOD patch]
+description=Eliminates most LOD pop-in during races
+patch=1,EE,21ED22,short,1000
+patch=1,EE,21F9AE,short,1000
+patch=1,EE,22227A,short,1000
+patch=1,EE,22423A,short,1000
+
 [True 21:9 Ultrawide]
 author=Silentwarior112
 description=True 21:9 in races
