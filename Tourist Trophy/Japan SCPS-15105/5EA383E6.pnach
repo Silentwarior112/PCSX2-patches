@@ -1,0 +1,29 @@
+gametitle=Tourist Trophy (SCPS-15105)
+
+[Autoboot in 480p]
+description=The game will always start races in 480p instead of 480i.
+author=Blackbird+Silent / Silentwarior112
+patch=1,EE,20816388,byte,01
+
+[Deinterlace menus]
+author=Silentwarior112
+description=Progressive scan in menus. Use `No interlacing`
+patch=1,EE,0046A4FC,word,0000102D // 80A202C0
+
+[Field of View adjustment]
+author=Silentwarior112
+description=Overrides Overscan Factor (Field of View)
+patch=1,EE,00814CEC,word,3F5B508D
+
+[Trigger Sensitivity]
+author=CookiePLMonster / Silentwarior112
+description=100% trigger press for full Gas, Brake, & Rear Brake
+//Throttle
+patch=1,EE,203FD224,extended,24110064
+patch=1,EE,203FD2A4,extended,00000000
+//Brake
+patch=1,EE,203FD22C,extended,24160064
+patch=1,EE,203FD300,extended,00000000
+//Rear Brake
+patch=1,EE,203FD230,extended,24150064
+patch=1,EE,203FD358,extended,00000000
