@@ -3,7 +3,7 @@ gametitle=Tourist Trophy (SCPS-15105)
 [Autoboot in 480p]
 description=The game will always start races in 480p instead of 480i.
 author=Blackbird+Silent / Silentwarior112
-patch=1,EE,20816388,byte,01
+patch=1,EE,20816988,byte,01
 
 [Deinterlace menus]
 author=Silentwarior112
