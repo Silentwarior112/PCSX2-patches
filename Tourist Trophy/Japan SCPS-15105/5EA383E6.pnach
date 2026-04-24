@@ -13,7 +13,7 @@ patch=1,EE,0046A4FC,word,0000102D // 80A202C0
 [Field of View adjustment]
 author=Silentwarior112
 description=Overrides Overscan Factor (Field of View)
-patch=1,EE,00814CEC,word,3F5B508D
+patch=1,EE,008152EC,word,3F5B508D
 
 [Trigger Sensitivity]
 author=CookiePLMonster / Silentwarior112
